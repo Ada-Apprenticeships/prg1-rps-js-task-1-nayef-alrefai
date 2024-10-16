@@ -1,25 +1,22 @@
-const readlineSync = require('readline-sync');
+//rock_paper_scissors("paper", "paper")
 
-function PlayerChoice() {
-  let choice = readlineSync.question('Please enter rock paper or scissors').toLowerCase();
-  while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
-    choice = readlineSync.question ('Please input a valid choice of either rock, paper or scissors').toLowerCase();
+
+function rockPaperScissors(player1, player2) {
+  
+  if (player1 === player2) {
+    return "draw"
   }
-   return PlayerChoice; 
 
-}
+  else if ((player1 === "rock" && player2 === "scissors") || (player1 === "paper" && player2 === "rock") || (player1 === "scissors" && player2 === "paper")) {
+    return "player1"
+    }
 
-User1 = PlayerChoice()
-User2 = PlayerChoice()
-
-console.log(User1 + User2);
-
-/*function rockPaperScissors(player1, player2) {
-  
-  
+  else if ((player1 === "paper" && player2 === "scissors") || (player1 === "scissors" && player2 === "rock") || (player1 === "rock" && player2 === "paper")) {
+    return "player2"
+  }
    
 }
-
+//console.log(rockPaperScissors("scissors", "rock"))
 
 
 
@@ -33,4 +30,3 @@ console.log(User1 + User2);
 module.exports = {
   rockPaperScissors,
 }
-  */
